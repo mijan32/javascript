@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="language">
+        <li> javaScript</li>
+    </ul>
+</body>
+<script>
+    const div= document.createElement('div')
+    console.log(div);
+    div.id=Math.round(
+        Math.random()*10+1
+    )
+    div.className="main"
+    div.setAttribute("title"," generate title")
+    div.style.backgroundColor='green'
+    const addText=document.createTextNode("Welcome to js")
+    div.appendChild(addText)
+    document.body.appendChild(div)
+    function addlanguage(lan){
+        const li= document.createElement('li')
+        li.innerHTML=`${lan}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addlanguage("C++")
+    addlanguage('Java')
+    function addOptiLanguage(lan){
+        const li= document.createElement('li');
+        li.appendChild(document.createTextNode(lan))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage("rubi")
+    const secondLang=document.querySelector("li:nth-child(2)")
+    const newLi= document.createElement('li')
+    newLi.appendChild(document.createTextNode("Mojo"))
+    secondLang.replaceWith(newLi)
+</script>
+</html>
